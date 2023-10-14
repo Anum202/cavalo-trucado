@@ -18,7 +18,6 @@ const AppNavigation = () => {
                 screenOptions={{
                     contentStyle: {
                         // backgroundColor: Colors.pageColor,
-                        // backgroundColor: 'yellow'
                     }
                 }}
             >
