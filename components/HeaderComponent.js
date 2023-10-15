@@ -1,12 +1,23 @@
+import { useNavigation, DrawerActions } from "@react-navigation/native";
 import { View, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 
 import Colors from '../theme/Colors';
 
 const HeaderComponent = () => {
+
+    const navigation = useNavigation();
+
+    const openDrawer = () => {
+        navigation.dispatch(DrawerActions.openDrawer());
+    };
+
     return (
         <View style={styles.headerContainer}>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity
+                style={styles.iconContainer}
+                onPress={openDrawer}
+            >
                 <Icons name="menu" size={26} color={Colors.primary} />
             </TouchableOpacity>
             <View style={styles.logoContainer}>
@@ -50,3 +61,5 @@ const styles = StyleSheet.create({
         height: 40,
     },
 });
+
+
